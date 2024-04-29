@@ -22,7 +22,37 @@ case "REMOVE_POST":
         hits:state.hits.filter(
             (removeEle) => removeEle.objectID !==  action.payload
     )}
+    case "SEARCH_POST":
+        return{
+            ...state,
+            query:action.payload
+        }
+case "NEXT_PAGE":
+    let pageInc = state.page +1;
+    if(pageInc > state.nbPages){
+        pageInc = 0;
+    }
+    
+    return {
+        ...state,
+        page:pageInc
+    }
 
+
+case "PREV_PAGE":
+    let pageNum = state.page;
+    if(pageNum <= 0){
+        pageNum= 0;
+    }
+    else{
+        pageNum =pageNum-1
+    }
+
+   
+    return {
+        ...state,
+        page:pageNum
+    }
 
 
           

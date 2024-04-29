@@ -27,7 +27,7 @@ const Stories = () => {
           return (
             <div key={objectID} className='card'>
               <h2 >{title}</h2>
-              <p> By<span> {author}</span> | <span>{num_comments} comments</span></p>
+              <p> By<span> {author}</span>|<span>{num_comments} comments</span></p>
               <div className='subCard'>
                 <a href={url} target='blank'>Read More</a>
                 <a href='#' onClick={()=> removePost(objectID)}>Remove</a>

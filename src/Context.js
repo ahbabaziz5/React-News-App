@@ -53,15 +53,32 @@ const removePost =(RemoveId)=>{
 
   })
 }
+const searchPost=(searchQuery)=>{
+ dispatch({
+ type:"SEARCH_POST",
+ payload:searchQuery,
+ })
+}
+const prevPage = ()=>{
+  dispatch({
+    type:"PREV_PAGE"
+  })
+  
+}
+const nextPage = ()=>{
+dispatch({
+  type:"NEXT_PAGE"
+})
+}
 
 useEffect(()=>{
 
 FetchApiData(`${API}?query=${state.query}&page=${state.page}`)
 
-},[])
+},[state.query])
 
     return(
-  <AppContext.Provider value={{...state,removePost}}>
+  <AppContext.Provider value={{...state,removePost,searchPost,prevPage,nextPage}}>
     {children}
     </AppContext.Provider>
 

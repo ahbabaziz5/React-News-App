@@ -1,21 +1,28 @@
+body{
+  background-color:orange;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
 .first{
-  border:1px solid black;
-  width:100%;
-  height:auto;
-  display:flex;
+  
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-style: none;
-  background-color: #ffffff;
-
+ 
 }
 .card{
-  border:1px solid black;
+  border:1px solid blue;
   height:180px;
   width:80%;
-  margin:10px;
-  padding:10px;
+  /* margin:10px; */
+  padding:20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 3px blue;
+
+
 }
 .subCard{
   display: flex;
@@ -26,6 +33,32 @@ a{
   color: blue;
   text-decoration: none;
 }
-span{
-  
+button{
+  width: 50px;
+  height: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: blue;
+  background-color: orange;
+  box-shadow: 5px 5px 3px blue;
+
+  border-radius: 5px;
+  border-style: none;
+}
+input{
+ min-width: 350px;
+  height: 40px;
+  font-size: medium;
+  font-weight: bold;
+  padding-left: 10px;
+  border-radius: 10px;
+  border-color: blue;
+}
+h1{
+font-weight: bolder;
+font-size: 50px;
+color: blue;
+text-shadow: 3px 3px 4px blue;
+
+
 }
