@@ -6,7 +6,7 @@ const Pagination = () => {
   const {page,nbPages,prevPage,nextPage} = useGlobalContext()
   return (
    <>
-   <div>
+   <div style={{textAlign:"center"}}>
     <button onClick={()=> prevPage()}>
      PREV
     </button>

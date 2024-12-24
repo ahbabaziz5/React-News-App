@@ -1,64 +1,205 @@
-body{
-  background-color:orange;
-  font-family: Arial, Helvetica, sans-serif;
-  
+/* Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Ensures padding and borders are included in the element's total width/height */
 }
 
-.first{
-  
+body {
+  background-color: #e1f5fe; /* Soft light blue background */
+  font-family: 'Open Sans', sans-serif;
+  color: #2c3e50; /* Dark blue-gray text for readability */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Container Styles */
+.first {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
- 
+  padding: 20px;
+  width: 100%;
+  overflow: hidden; /* Prevent overflow in container */
 }
-.card{
-  border:1px solid blue;
-  height:180px;
-  width:80%;
-  /* margin:10px; */
-  padding:20px;
-  border-radius: 20px;
+
+/* Card Styles */
+.card {
+  background-color: #ffffff; /* White background for the card */
+  border: 1px solid #a0c6f5; /* Soft light blue border */
+  border-radius: 12px;
+  padding: 25px;
+  width: 100%;
+  max-width: 600px;
   margin-top: 20px;
-  box-shadow: 5px 5px 3px blue;
-
-
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for modern depth */
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+  overflow: hidden; /* Prevent card overflow */
 }
-.subCard{
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Sub Card Styles */
+.subCard {
   display: flex;
   justify-content: space-between;
-
+  margin-top: 20px;
+  color: #4e3a2d; /* Dark brown for professional and vintage feel */
+  overflow: hidden; /* Prevent overflow within subCard */
 }
-a{
-  color: blue;
+
+/* Link Styles */
+a {
+  color: #2a5d84; /* Elegant deep blue link color */
   text-decoration: none;
-}
-button{
-  width: 50px;
-  height: 30px;
-  margin-right: 10px;
-  margin-left: 10px;
-  color: blue;
-  background-color: orange;
-  box-shadow: 5px 5px 3px blue;
-
-  border-radius: 5px;
-  border-style: none;
-}
-input{
- min-width: 350px;
-  height: 40px;
-  font-size: medium;
   font-weight: bold;
-  padding-left: 10px;
-  border-radius: 10px;
-  border-color: blue;
+  font-size: 14px;
+  transition: color 0.3s ease;
 }
-h1{
-font-weight: bolder;
-font-size: 50px;
-color: blue;
-text-shadow: 3px 3px 4px blue;
 
+a:hover {
+  color: #1f3a4c; /* Darker blue on hover for interactive feel */
+}
 
+/* Button Styles */
+button {
+  width: 100%; /* Ensure button takes full width */
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  background-color: #1e3a8a; /* Dark blue for the button */
+  border: none;
+  border-radius: 5px;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Prevent overflow */
+}
+
+button:hover {
+  background-color: #1a2b6d; /* Darker blue on hover */
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Input Styles */
+input {
+  width: 60%; /* Input takes full width on smaller screens */
+  height: 45px;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 15px;
+  border-radius: 8px;
+  border: 2px solid #a0c6f5; /* Light blue border */
+  background-color: #e6f7ff; /* Light blue background for inputs */
+  color: #2c3e50; /* Dark text color for readability */
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+input:focus {
+  border-color: #1e3a8a; /* Dark blue border when focused */
+  outline: none;
+}
+
+/* Header Styles */
+h1 {
+  font-weight: bold;
+  font-size: 60px;
+  color: #1e3a8a; /* Dark blue header */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  text-align: center; /* Center align header for better appearance */
+  overflow: hidden;
+  width:50% /* Prevent overflow */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Full width of container */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  h1 {
+    font-size: 45px; /* Adjust header size for smaller screens */
+  }
+
+  input {
+    width: 100%; /* Input takes up full width on smaller screens */
+  }
+
+  button {
+    width: 100%; /* Make buttons full width on smaller screens */
+    height: 50px; /* Increase height for better clickability */
+  }
+
+  .first {
+    padding: 10px; /* Less padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 36px;
+    width:80% /* Further adjust header size for very small screens */
+  }
+
+  input {
+    width: 100%; /* Ensure input is full width on smaller screens */
+    font-size: 14px; /* Adjust font size for better mobile readability */
+  }
+
+  .card {
+    width: 95%; /* Make card slightly wider for small mobile devices */
+  }
+
+  button {
+    height: 45px; /* Adjust button height for better fit on small screens */
+  }
+}
+
+/* Pagination Styles */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adds space between buttons and the span */
+  margin-top: 20px; /* Adds space on top */
+}
+
+.pagination-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1e3a8a; /* Dark blue background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-btn:hover {
+  background-color: #1a2b6d; /* Darker blue on hover */
+}
+
+.pagination-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center; /* Centers the text inside the span */
+  display: inline-block; /* Ensure it takes only the necessary width */
 }

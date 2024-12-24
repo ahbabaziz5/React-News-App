@@ -5,7 +5,7 @@ import React, { createContext,useContext,useReducer,useEffect } from 'react'
 import reducer from './reducer';
 
 const initialState = {
-  query:"html",
+  query:"Html",
   nbPages:0,
   page:0,
   hits:[]
